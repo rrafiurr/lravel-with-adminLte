@@ -21,6 +21,7 @@ Route::get('/t', function () {
     return view('test');
 });
 Route::get('transaction-medias','App\Http\Controllers\TransactionController@get_transaction_media'); 
+Route::get('transaction-list','App\Http\Controllers\TransactionController@list'); 
 Route::resource('transactions','App\Http\Controllers\TransactionController');
 
 // Route::get('/user', [UserController::class, 'index']);

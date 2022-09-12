@@ -17,10 +17,12 @@ const app = createApp({});
 
 import ExampleComponent from './components/ExampleComponent.vue';
 import TransactionComponent from './components/TransactionComponent.vue';
+import TransactionListComponent from './components/TransactionListComponent.vue';
 
 
 app.component('example-component', ExampleComponent);
 app.component('transaction-component', TransactionComponent);
+app.component('transaction-list-component', TransactionListComponent);
 
 /**
  * The following block of code may be used to automatically register your

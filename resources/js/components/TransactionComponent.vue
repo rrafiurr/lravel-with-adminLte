@@ -37,35 +37,7 @@
         </div>
 <!-- </div>
 <div class="row"> -->
-  <div class="col-12">
-    <div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title">Previos Transactions</h3>
-              </div>
-              <div class="card-body">
-                <table id="example2" class="table table-bordered table-hover">
-                  <thead>
-                    <tr>
-                    <th>Date</th>
-                    <th>Amount</th>
-                    <th>Proof</th>
-                    <th>Status</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                    <tr v-for="item in transactions" :key="item.id">
-                    <th>{{ item.date }}</th>
-                    <th>{{ item.amount }}</th>
-                    <th>{{ item.proof }}</th>
-                    <th v-if="item.status == 1">Submitted</th>
-                    <th v-if="item.status == 2">Approved</th>
-                    <th v-if="item.status == 3">Rejected</th>
-                  </tr>
-                  </tbody>
-                </table>
-              </div>
-              </div>
-  </div>
+  
 </div>
 </div>
 </template>

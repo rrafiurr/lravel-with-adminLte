@@ -16,7 +16,11 @@ class TransactionController extends Controller
      */
     public function index()
     {
-        return Transaction::orderBy('date','desc')->get();
+        return Transaction::with('user')->orderBy('date','desc')->get();
+    }
+    public function list()
+    {
+        return view('transactions/list');
     }
 
     /**
@@ -38,6 +42,17 @@ class TransactionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    public function transaction_approve(Request $request)
+    {
+        $this->validate($request, [
+            ' transaction_id' => 'required',
+            'status' => 'required'
+        ]);
+
+        $transaction = Transaction::find($request->transaction_id);
+        $transaction->status = $request->status;
+        return $transaction->save();
+    }
     public function store(Request $request)
     {
         $this->validate($request, [
