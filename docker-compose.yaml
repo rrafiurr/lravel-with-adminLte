@@ -14,6 +14,7 @@ services:
       # - blog_db
     networks:
       - app_network
+      - common-net
 
   blog_nginx:
     container_name: blog_nginx
@@ -59,3 +60,5 @@ services:
 networks:
   app_network:
     driver: bridge
+  common-net:
+    external: true
