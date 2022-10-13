@@ -16,7 +16,7 @@ services:
       - app_network
 
   blog_nginx:
-    container_name: blog_nginx
+    container_name: blog_nginx_signerhut
     build:
       context: .
       dockerfile: ./docker/nginx/Dockerfile

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FrontController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,11 +14,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [FrontController::class, 'home']);
 
 Route::get('/t', function () {
     return view('test');
+});
+
+Route::get('/h', function () {
+    return view('layout/front/home');
+});
+
+Route::get('/c', function () {
+    return view('layout/front/category');
+});
+
+Route::get('/d', function () {
+    return view('layout/front/homes');
 });
 
