@@ -1,7 +1,7 @@
 version: "3.8"
 services:
-  blog_app:
-    container_name: blog_app
+  donation_app:
+    container_name: donation_app
     build:
       context: .
       dockerfile: ./docker/php/Dockerfile
@@ -15,6 +15,7 @@ services:
     networks:
       - app_network
       - common-net
+        
 
   blog_nginx:
     container_name: blog_nginx
@@ -26,9 +27,9 @@ services:
     ports:
       - 8000:80
     depends_on:
-      - blog_app
+      - donation_app
     environment:
-      NGINX_FPM_HOST: blog_app
+      NGINX_FPM_HOST: donation_app
       NGINX_ROOT: /usr/src/app/public
     networks:
       - app_network

@@ -12,9 +12,12 @@ class Transaction extends Model
     protected $table = 'transactions';
 
     
-        public function user(): HasOne
-        {
-            return $this->hasOne(User::class, 'id', 'user_id');
-        }
-    
+    public function user(): HasOne
+    {
+        return $this->hasOne(User::class, 'id', 'user_id');
+    }
+    public function transaction_medias(): HasOne
+    {
+        return $this->hasOne(TransactionMedia::class, 'id', 'transaction_medias_id');
+    }
 }
